@@ -19,7 +19,7 @@ Una infraestructura cloud completament integrada i allotjada en una instància A
 
 ## Arquitectura de Tres Capes
 
-```text
+
 ┌─────────────────────────────────────────────────────────┐
 │  CAPA 3 — INFRAESTRUCTURA I PERÍMETRE (AWS VPC)         │
 │  EC2 Ubuntu Server · Security Groups · Regles d'Entrada │
