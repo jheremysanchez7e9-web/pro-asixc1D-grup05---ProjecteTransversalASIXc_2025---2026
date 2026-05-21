@@ -19,7 +19,7 @@ Una infraestructura cloud completament integrada i allotjada en una instància A
 
 ## Arquitectura de Tres Capes
 
-
+```text
 ┌─────────────────────────────────────────────────────────┐
 │  CAPA 3 — INFRAESTRUCTURA I PERÍMETRE (AWS VPC)         │
 │  EC2 Ubuntu Server · Security Groups · Regles d'Entrada │
@@ -37,6 +37,7 @@ Una infraestructura cloud completament integrada i allotjada en una instància A
 │  MySQL / MariaDB · Triggers · Backups Automatitzats     │
 │  Registre de sessions AV · Estructures de privilegis    │
 └─────────────────────────────────────────────────────────┘
+```
 
 Capa 1 — Persistència i Control de Dades (Base de Dades): El motor relacional centralitza l'emmagatzematge de configuracions, control d'accessos i l'auditoria automatitzada. Els triggers registren esdeveniments de streaming a la taula log_events de manera automàtica, mentre que tasques programades en crontab asseguren còpies de seguretat periòdiques de l'esquema.
 
