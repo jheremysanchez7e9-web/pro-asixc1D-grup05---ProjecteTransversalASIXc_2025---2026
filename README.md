@@ -20,7 +20,7 @@ Una infraestructura cloud completament integrada i allotjada en una instància A
 ## Arquitectura de Tres Capes
 
 ┌─────────────────────────────────────────────────────────┐
-│  CAPA 3 — INFRAESTRUCTURA I PERÍMETRE (AWS VPC)          │
+│  CAPA 3 — INFRAESTRUCTURA I PERÍMETRE (AWS VPC)         │
 │  EC2 Ubuntu Server · Security Groups · Regles d'Entrada │
 │  Punt d'entrada únic · IP pública fixa 98.83.198.167    │
 └────────────────────────┬────────────────────────────────┘
