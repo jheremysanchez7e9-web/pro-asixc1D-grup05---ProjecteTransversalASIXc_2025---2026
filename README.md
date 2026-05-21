@@ -1,9 +1,9 @@
-# INNOVATE TECH - Plataforma Integrada de Servicios Multimedia y Base de Datos en Cloud
+# INNOVATE TECH - Plataforma Integrada de Serveis Multimèdia i Base de Dades en Cloud
 
 Design and implementation of a centralized cloud multimedia infrastructure with managed audio/video streaming, WebRTC videoconferencing, and an audited relational database — deployed on an AWS EC2 instance.
 Authors: Liam, Jheremy, Felix
-Cycle: CFGS ASIX — Administracio de Sistemes Informatics en Xarxa
-Centre: Institut Tecnologic de Barcelona
+Cycle: CFGS ASIX — Administració de Sistemes Informàtics en Xarxa
+Centre: Institut Tecnològic de Barcelona
 Academic year: 2025–2026
 Project period: 13/04/2026 → 12/05/2026
 Defence: 20/05/2026
@@ -20,119 +20,119 @@ A fully integrated cloud infrastructure hosted on an AWS EC2 instance running Ub
 ## Three-Layer Architecture
 
 ┌─────────────────────────────────────────────────────────┐
-│  CAPA 3 — INFRAESTRUCTURA Y PERIMETRO (AWS VPC)          │
-│  EC2 Ubuntu Server · Security Groups · Reglas de Entrada │
-│  Punto de entrada unico · IP publica fija 98.83.198.167 │
+│  CAPA 3 — INFRAESTRUCTURA I PERÍMETRE (AWS VPC)          │
+│  EC2 Ubuntu Server · Security Groups · Regles d'Entrada │
+│  Punt d'entrada únic · IP pública fixa 98.83.198.167    │
 └────────────────────────┬────────────────────────────────┘
-                         │ filtrado y distribucion de puertos
+                         │ filtratge i distribució de ports
 ┌────────────────────────▼────────────────────────────────┐
-│  CAPA 2 — SERVICIOS MULTIMEDIA (Streaming y WebRTC)     │
-│  Icecast2 · Jellyfin (VoD) · Jitsi Meet (Prosody/JVB)  │
-│  Ingesta por BUTT · Streaming HLS · Comunicacion WebRTC │
+│  CAPA 2 — SERVEIS MULTIMÈDIA (Streaming i WebRTC)       │
+│  Icecast2 · Jellyfin (VoD) · Jitsi Meet (Prosody/JVB)   │
+│  Ingesta per BUTT · Streaming HLS · Comunicació WebRTC  │
 └────────────────────────┬────────────────────────────────┘
-                         │ persistencia e integracion de logs
+                         │ persistència i integració de logs
 ┌────────────────────────▼────────────────────────────────┐
-│  CAPA 1 — PERSISTENCIA Y CONTROL DE DATOS (Relacional)  │
-│  MySQL / MariaDB · Triggers · Backups Automatizados    │
-│  Registro de sesiones AV · Estructuras de privilegios   │
+│  CAPA 1 — PERSISTÈNCIA I CONTROL DE DADES (Relacional)  │
+│  MySQL / MariaDB · Triggers · Backups Automatitzats     │
+│  Registre de sessions AV · Estructures de privilegis    │
 └─────────────────────────────────────────────────────────┘
 
-Capa 1 — Persistencia y Control de Datos (Base de Datos): El motor relacional centraliza el almacenamiento de configuraciones, control de accesos y la auditoria automatizada. Los triggers registran eventos de streaming en la tabla log_events de manera automatica, mientras que tareas programadas en crontab aseguran copias de respaldo periodicas del esquema.
+Capa 1 — Persistència i Control de Dades (Base de Dades): El motor relacional centralitza l'emmagatzematge de configuracions, control d'accessos i l'auditoria automatitzada. Els triggers registren esdeveniments de streaming a la taula log_events de manera automàtica, mentre que tasques programades en crontab asseguren còpies de seguretat periòdiques de l'esquema.
 
-Capa 2 — Servicios Multimedia (Audio y Video): Capa encargada del procesamiento, codificacion y distribucion de flux multimedia. Gestiona la ingesta de emisiones de audio comprimido en tiempo real, el empaquetado de video bajo demanda adaptativo mediante segmentos HLS y el enrutamiento de videoconferencias síncronas.
+Capa 2 — Serveis Multimèdia (Àudio i Vídeo): Capa encarregada del processament, codificació i distribució de fluxos multimèdia. Gestiona la ingesta d'emissions d'àudio comprimit en temps real, l'empaquetat de vídeo sota demanda adaptatiu mitjançant segments HLS i l'enrutament de videoconferències síncrones.
 
-Capa 3 — Infraestructura y Perimetro (Red Cloud): La VPC de AWS actua como el contenedor de seguridad perimetral de la maquina virtual. Restringe y autoriza las conexiones externas mapeando de forma estricta los sockets requeridos por los servicios de las capas inferiores, aislando el trafico administrativo del operativo.
+Capa 3 — Infraestructura i Perímetre (Xarxa Cloud): La VPC d'AWS actua com el contenidor de seguretat perimetral de la màquina virtual. Restringeix i autoritza les connexions externes mapejant de forma estricta els sockets requerits pels serveis de les capes inferiors, aïllant el trànsit administratiu de l'operatiu.
 
 ## Operational Flow
 
-### Flujo de Emision de Audio (Radio)
-Cliente local (BUTT) → Conexion TCP Puerto 8000 (Credencial: ITB2026!)
-                    → Punto de montaje unificado (/stream)
+### Flux d'Emissió d'Àudio (Ràdio)
+Client local (BUTT) → Connexió TCP Port 8000 (Credencial: ITB2026!)
+                    → Punt de muntatge unificat (/stream)
                     → Servidor Icecast2 (AWS EC2)
-                    → Difusion publica (Stream MP3 CBR 128 kbps)
-                    → Navegador Web del Cliente Final
+                    → Difusió pública (Stream MP3 CBR 128 kbps)
+                    → Navegador Web del Client Final
 
-### Flujo de Video bajo Demanda (VoD)
-FileZilla SFTP (Puerto 22) → Transferencia segura de clip MP4 (H.264)
-                          → Directorio de produccion /var/www/videos (chmod 777)
-                          → Indexacion e inicializacion en Jellyfin (Puerto 8096)
-                          → Streaming adaptativo HLS transcodificado
-                          → Reproduccion nativa en navegador
+### Flux de Vídeo sota Demanda (VoD)
+FileZilla SFTP (Port 22) → Transferència segura de clip MP4 (H.264)
+                          → Directori de producció /var/www/videos (chmod 777)
+                          → Indexació i inicialització a Jellyfin (Port 8096)
+                          → Streaming adaptatiu HLS transcodificat
+                          → Reproducció nativa en navegador
 
-### Flujo de Videoconferencia WebRTC
-Usuario 1 (PC) + Usuario 2 (Movil 4G/5G) → Acceso cifrado HTTPS (Puerto TCP 443)
-                                        → Servidor Jitsi Meet (Resolucion Hostname 98.83.198.167)
-                                        → Validacion de Certificado TLS Autofirmado
-                                        → Activacion de API WebRTC local en navegadores
-                                        → Intercambio de streams multimedia via Puerto UDP 10000 (JVB)
+### Flux de Videoconferència WebRTC
+Usuari 1 (PC) + Usuari 2 (Mòbil 4G/5G) → Accés xifrat HTTPS (Port TCP 443)
+                                        → Servidor Jitsi Meet (Resolució Hostname 98.83.198.167)
+                                        → Validació de Certificat TLS Autofirmat
+                                        → Activació de l'API WebRTC local en navegadors
+                                        → Intercanvi de fluxos multimèdia via Port UDP 10000 (JVB)
                                         → Videollamada activa bidireccional
 
 ## Technology Stack
 
-| Componente | Tecnologia | Rol / Proposito |
+| Component | Tecnologia | Rol / Propòsit |
 | :--- | :--- | :--- |
-| Proveedor Cloud | AWS (VPC, EC2, Security Groups) | Aprovisionamiento del nodo virtual y politicas de filtrado perimetral. |
-| Sistema Operativo | Ubuntu Server v22.04 LTS | Sistema operativo base de produccion (nodo ip-172-31-46-28). |
-| Servidor de Audio | Icecast2 | Distribucion y montaje del flujo de audio en streaming continuo. |
-| Cliente de Ingesta | BUTT (Broadcast Using This Tool) | Captura de entrada local, modulacion y codificacion MP3 hacia el cloud. |
-| Plataforma VoD | Jellyfin | Gestion de librerias de video y streaming HLS de archivos locales. |
-| Videoconferencia | Jitsi Meet (Jicofo, JVB, Prosody) | Orquestacion XMPP y transmision WebRTC síncrona multicliente. |
-| Motor de Base de Datos| MySQL / MariaDB | Modelo relacional, persistencia, triggers y control de roles. |
-| Gestor de Archivos | SFTP / FileZilla | Carga segura de assets multimedia y extraccion de respaldos SQL. |
-| Telemetria y Red | iperf3 / speedtest-cli / htop | Cuantificacion de ancho de banda, latencias y estres de CPU/RAM. |
+| Proveïdor Cloud | AWS (VPC, EC2, Security Groups) | Aprovisionament del node virtual i polítiques de filtratge perimetral. |
+| Sistema Operatiu | Ubuntu Server v22.04 LTS | Sistema operatiu base de producció (node ip-172-31-46-28). |
+| Servidor d'Àudio | Icecast2 | Distribució i muntatge del flux d'àudio en streaming continu. |
+| Client d'Ingesta | BUTT (Broadcast Using This Tool) | Captura d'entrada local, modulació i codificació MP3 cap al cloud. |
+| Plataforma VoD | Jellyfin | Gestió de llibreries de vídeo i streaming HLS d'arxius locals. |
+| Videoconferència | Jitsi Meet (Jicofo, JVB, Prosody) | Orquestració XMPP i transmissió WebRTC síncrona multiclient. |
+| Motor de Base de Dades| MySQL / MariaDB | Model relacional, persistència, triggers i control de rols. |
+| Gestor d'Arxius | SFTP / FileZilla | Càrrega segura d'assets multimèdia i extracció de vòlculs SQL. |
+| Telemetria i Xarxa | iperf3 / speedtest-cli / htop | Quantificació d'amplada de banda, latències i estrès de CPU/RAM. |
 
 ## Technical Validation — Quality Assurance
 
-El correcto funcionamiento de la infraestructura cloud se ratifica mediante pruebas funcionales detalladas en la documentacion especifica de cada bloque:
+El correcte funcionament de la infraestructura cloud es ratifica mitjançant proves funcionals detallades en la documentació específica de cada bloc:
 
-### Validacion de Servicios Multimedia (Bloque 2)
-* Flujo de Audio Estable: Verificacion del socket TCP 8000 operando en segundo plan y modulacion correcta en el vúmetro de BUTT al conectar el stream.
-* Transmision de Video sin Bloqueos: Resolucion de incidencias de tiempo de espera excesivo (timeout) abriendo el puerto TCP 8096, logrando la reproduccion directa HLS del archivo MP4 subido en `/var/www/videos`.
-* Conectividad WebRTC Multiplataforma: Mitigacion de la ausencia de camaras en monitores locales mediante la conexion cruzada de un smartphone a traves de redes moviles independientes, evadiendo colisiones de bucle de red (NAT Loopback) y manteniendo la llamada fluida a traves del puerto UDP 10000.
-* Rendimiento del Servidor: Pruebas de carga utilizando htop concurrentemente con todos los servicios multimedia en ejecucion para certificar la estabilidad de la CPU y memoria RAM.
+### Validació de Serveis Multimèdia (Bloc 2)
+* Flux d'Àudio Estable: Verificació del socket TCP 8000 operant en segon pla i modulació correcta en el vúmetre de BUTT en connectar el stream.
+* Transmissió de Vídeo sense Bloquejos: Resolució d'incidències de temps d'espera excessiu (timeout) obrint el port TCP 8096, aconseguint la reproducció directa HLS de l'arxiu MP4 pujat a `/var/www/videos`.
+* Connectivitat WebRTC Multiplataforma: Mitigació de l'absència de càmeres en monitors locals mitjançant la connexió creuada d'un smartphone a través de xarxes mòbils independents, evitant col·lisions de bucle de xarxa (NAT Loopback) i mantenint la trucada fluida a través del port UDP 10000.
+* Rendiment del Servidor: Proves de càrrega utilitzant htop concurrentment amb tots els serveis multimèdia en execució per certificar l'estabilitat de la CPU i memòria RAM.
 
-### Validacion de Estructuras de Datos (Bloque 3)
-* Integridad de Esquemas: Ejecucion de SHOW TABLES constatando la existencia y vinculacion de las entidades disenadas en el diagrama E-R.
-* Control de Privilegios: Auditoria via SHOW GRANTS comprobando el aislamiento de usuarios y denegacion automatica ante accesos no autorizados.
-* Automatizacion: Verificacion del correcto disparo de triggers almacenando eventos en log_events y validacion de tareas Cron generando volcados .sql estables.
+### Validació d'Estructures de Dades (Bloc 3)
+* Integritat d'Esquemes: Execució de SHOW TABLES constatant l'existència i vinculació de les entitats dissenyades en el diagrama E-R.
+* Control de Privilegis: Auditoria via SHOW GRANTS comprovant l'aïllament d'usuaris i denegació automàtica davant d'accessos no autoritzats.
+* Automatització: Verificació del correcte dispar d'actuadors (triggers) emmagatzemant esdeveniments a log_events i validació de tasques Cron generant vòlculs .sql estables.
 
 ## Repository Structure
 
 innovate-tech-projecte/
-├── README.md                        # Indice general, IP publica y matriz de puertos corporativos
-├── bloque1-infraestructura/         # Modulo técnico liderado por LIAM
-│   ├── README.md                    # Documentacion de diseno de CPD, VPC, EC2, SFTP y logs
-│   └── captures/                    # Evidencias graficas (Planos, AWS Console, FileZilla status)
-├── bloque2-audio-video/             # Modulo técnico liderado por JHEREMY
-│   ├── README.md                    # Manual de instalacion manual de Jellyfin, Icecast2, Jitsi y telemetria
-│   └── captures/                    # Evidencias (Terminal systemctl status, streaming web, htop metrics)
-└── bloque3-base-dades/              # Modulo técnico liderado por FELIX
-    ├── README.md                    # Documentacion del modelo relacional, roles, triggers y backups
-    ├── captures/                    # Evidencias (Diagramas E-R, consultas SHOW, outputs de scripts)
-    └── scripts/                     # Ficheros fuentes .sql (Creacion de tablas, triggers, crontab setup)
+├── README.md                        # Índex general, IP pública i matriu de ports corporatius
+├── bloque1-infraestructura/         # Mòdul tècnic liderat per LIAM
+│   ├── README.md                    # Documentació de disseny de CPD, VPC, EC2, SFTP i logs
+│   └── captures/                    # Evidències gràfiques (Plànols, AWS Console, FileZilla status)
+├── bloque2-audio-video/             # Mòdul tècnic liderat per JHEREMY
+│   ├── README.md                    # Manual d'instal·lació manual de Jellyfin, Icecast2, Jitsi i telemetria
+│   └── captures/                    # Evidències (Terminal systemctl status, streaming web, htop metrics)
+└── bloque3-base-dades/              # Mòdul tècnic liderat per FELIX
+    ├── README.md                    # Documentació del model relacional, rols, triggers i backups
+    ├── captures/                    # Evidències (Diagrames E-R, consultes SHOW, outputs de scripts)
+    └── scripts/                     # Fitxers fonts .sql (Creació de taules, triggers, crontab setup)
 
 ## Methodology
 
-El desarrollo tecnologico se ha estructurado bajo el marco de trabajo agil SCRUM, dividiendo los hitos de implementacion en sprints secuenciales indexados en la documentacion:
+El desenvolupament tecnològic s'ha estructurat sota el marc de treball àgil SCRUM, dividint les fites d'implementació en sprints seqüencials indexats en la documentació:
 
-| Sprint | Periodo | Enfoque Tecnico Principal |
+| Sprint | Període | Enfocament Tècnic Principal |
 | :--- | :--- | :--- |
-| Sprint 1 | 13/04/2026 → 24/04/2026 | Diseno de planos CPD, topologia de red AWS VPC y analisis inicial de mercado. |
-| Sprint 2 | 27/04/2026 → 12/05/2026 | Despliegue manual de servicios multimedia, securizacion de puertos, modelo E-R e integracion BD. |
+| Sprint 1 | 13/04/2026 → 24/04/2026 | Disseny de plànols CPD, topologia de xarxa AWS VPC i anàlisi inicial de mercat. |
+| Sprint 2 | 27/04/2026 → 12/05/2026 | Desplegament manual de serveis multimèdia, securització de ports, model E-R i integració BD. |
 
 ## Key Verification Documents
 
-| Documento Interno | Descripcion |
+| Document Intern | Descripció |
 | :--- | :--- |
-| bloque1-infraestructura/README.md | Especificaciones de la arquitectura de red cloud y parametrizacion del servidor perimetral. |
-| bloque2-audio-video/README.md | Procedimiento paso a paso para el despliegue multimedia, comandos de recuperacion y analisis de ancho de banda. |
-| bloque3-base-dades/README.md | Definicion de politicas de triggers, automatizacion de copias de seguridad e integracion orientada al servicio. |
+| bloque1-infraestructura/README.md | Especificacions de la arquitectura de xarxa cloud i parametrització del servidor perimetral. |
+| bloque2-audio-video/README.md | Procediment pas a pas pel desplegament multimèdia, comandes de recuperació i anàlisi d'amplada de banda. |
+| bloque3-base-dades/README.md | Definició de polítiques de triggers, automatització de còpies de seguretat i integració orientada al servei. |
 
 ## Deployment Prerequisites
 
-Para levantar los servicios de la plataforma desde un estado de parada total:
-1. Acceder a la consola de AWS e iniciar la instancia EC2 Ubuntu Server corporativa.
-2. Comprobar la asignacion de la direccion IP publica fija: `98.83.198.167`.
-3. Conectar por SSH y verificar el estado general de los demonios basicos: `sudo systemctl start icecast2 jellyfin prosody`.
-4. Auditar la escucha de sockets de red mediante el comando: `sudo netstat -tuln | grep -E "8000|8096|443|10000|3306"`.
-5. Iniciar la ingesta remota de assets y transmisiones segun los manuales especificos indexados.
+Per aixecar els serveis de la plataforma des d'un estat de parada total:
+1. Accedir a la consola d'AWS i iniciar la instància EC2 Ubuntu Server corporativa.
+2. Comprovar l'assignació de l'adreça IP pública fixa: `98.83.198.167`.
+3. Connectar per SSH i verificar l'estat general dels dimonis bàsics: `sudo systemctl start icecast2 jellyfin prosody`.
+4. Auditar l'escolta de sockets de xarxa mitjançant la comanda: `sudo netstat -tuln | grep -E "8000|8096|443|10000|3306"`.
+5. Iniciar la ingesta remota d'assets i transmissions segons els manuals específics indexats.
