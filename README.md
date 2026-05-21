@@ -1,23 +1,23 @@
 # INNOVATE TECH - Plataforma Integrada de Serveis Multimèdia i Base de Dades en Cloud
 
-Design and implementation of a centralized cloud multimedia infrastructure with managed audio/video streaming, WebRTC videoconferencing, and an audited relational database — deployed on an AWS EC2 instance.
-Authors: Liam, Jheremy, Felix
-Cycle: CFGS ASIX — Administració de Sistemes Informàtics en Xarxa
+Disseny i implementació d'una infraestructura multimèdia centralitzada en el cloud amb streaming d'àudio/vídeo gestionat, videoconferència WebRTC i una base de dades relacional auditada — desplegat en una instància AWS EC2.
+Autors: Liam, Jheremy, Felix
+Cicle: CFGS ASIX — Administració de Sistemes Informàtics en Xarxa
 Centre: Institut Tecnològic de Barcelona
-Academic year: 2025–2026
-Project period: 13/04/2026 → 12/05/2026
-Defence: 20/05/2026
+Any acadèmic: 2025–2026
+Període del projecte: 13/04/2026 → 12/05/2026
+Defensa: 20/05/2026
 
-## The Problem
+## El Problema
 
-Traditional on-premise localized deployments present severe limitations regarding scalability, high availability, and efficient resource distribution for media assets. In modern enterprise environments, managing heavy video-on-demand files, real-time live audio broadcasting, and low-latency communication require a decoupled infrastructure capable of segregating processing layers while maintaining strict persistence control and perimetric security boundaries.
-This project responds to that reality by architecture-designing and deploying a centralized cloud platform on AWS. Moving away from localized data stores, every service is systematically provisioned, integrated, and performance-evaluated under a single fixed corporate IP identifier. Access traffic is hardened at the infrastructure level, ensuring that internal application communication, database triggers, and user-end exposure operate within deterministic, audited boundaries.
+Els desplegaments locals tradicionals on-premise presenten severes limitacions pel que fa a l'escalabilitat, l'alta disponibilitat i la distribució eficient de recursos per als actius multimèdia. En els entorns empresarials moderns, la gestió de fitxers pesats de vídeo sota demanda, la radiodifusió d'àudio en directe en temps real i la comunicació de baixa latència requereixen una infraestructura desacoblada capaç de segregar les capes de processament mentre es manté un control estricte de la persistència i els límits de seguretat perimetral.
+Aquest projecte respon a aquesta realitat mitjançant el disseny de l'arquitectura i el desplegament d'una plataforma cloud centralitzada a AWS. Allunyant-se dels emmagatzematges de dades locals, cada servei s'aprovisiona, s'integra i s'avalua el seu rendiment de manera sistemàtica sota un únic identificador d'IP corporativa fixa. El trànsit d'accés s'endureix a nivell d'infraestructura, assegurant que la comunicació interna de les aplicacions, els triggers de la base de dades i l'exposició a l'usuari final operin dins de límits deterministes i auditats.
 
-## What This Project Builds
+## Què Construeix Aquest Projecte
 
-A fully integrated cloud infrastructure hosted on an AWS EC2 instance running Ubuntu Server (node ip-172-31-46-28). The core framework consolidates an enterprise radio broadcasting service, a Video-on-Demand (VoD) portal, a zero-plugin WebRTC videoconferencing environment, and a relational transactional database. All layers are secured via targeted Security Groups and audit mechanisms.
+Una infraestructura cloud completament integrada i allotjada en una instància AWS EC2 que executa Ubuntu Server (node ip-172-31-46-28). L'entorn central consolida un servei de radiodifusió empresarial, un portal de vídeo sota demanda (VoD), un entorn de videoconferència WebRTC sense connectors (zero-plugin) i una base de dades transaccional relacional. Totes les capes estan protegides mitjançant Security Groups específics i mecanismes d'auditoria.
 
-## Three-Layer Architecture
+## Arquitectura de Tres Capes
 
 ┌─────────────────────────────────────────────────────────┐
 │  CAPA 3 — INFRAESTRUCTURA I PERÍMETRE (AWS VPC)          │
@@ -43,7 +43,7 @@ Capa 2 — Serveis Multimèdia (Àudio i Vídeo): Capa encarregada del processam
 
 Capa 3 — Infraestructura i Perímetre (Xarxa Cloud): La VPC d'AWS actua com el contenidor de seguretat perimetral de la màquina virtual. Restringeix i autoritza les connexions externes mapejant de forma estricta els sockets requerits pels serveis de les capes inferiors, aïllant el trànsit administratiu de l'operatiu.
 
-## Operational Flow
+## Flux Operatiu
 
 ### Flux d'Emissió d'Àudio (Ràdio)
 Client local (BUTT) → Connexió TCP Port 8000 (Credencial: ITB2026!)
@@ -65,9 +65,9 @@ Usuari 1 (PC) + Usuari 2 (Mòbil 4G/5G) → Accés xifrat HTTPS (Port TCP 443)
                                         → Validació de Certificat TLS Autofirmat
                                         → Activació de l'API WebRTC local en navegadors
                                         → Intercanvi de fluxos multimèdia via Port UDP 10000 (JVB)
-                                        → Videollamada activa bidireccional
+                                        → Videotrucada activa bidireccional
 
-## Technology Stack
+## Stack Tecnològic
 
 | Component | Tecnologia | Rol / Propòsit |
 | :--- | :--- | :--- |
@@ -77,27 +77,28 @@ Usuari 1 (PC) + Usuari 2 (Mòbil 4G/5G) → Accés xifrat HTTPS (Port TCP 443)
 | Client d'Ingesta | BUTT (Broadcast Using This Tool) | Captura d'entrada local, modulació i codificació MP3 cap al cloud. |
 | Plataforma VoD | Jellyfin | Gestió de llibreries de vídeo i streaming HLS d'arxius locals. |
 | Videoconferència | Jitsi Meet (Jicofo, JVB, Prosody) | Orquestració XMPP i transmissió WebRTC síncrona multiclient. |
-| Motor de Base de Dades| MySQL / MariaDB | Model relacional, persistència, triggers i control de rols. |
+| Motor de Base de Dades | MySQL / MariaDB | Model relacional, persistència, triggers i control de rols. |
 | Gestor d'Arxius | SFTP / FileZilla | Càrrega segura d'assets multimèdia i extracció de vòlculs SQL. |
 | Telemetria i Xarxa | iperf3 / speedtest-cli / htop | Quantificació d'amplada de banda, latències i estrès de CPU/RAM. |
 
-## Technical Validation — Quality Assurance
+## Validació Tècnica — Quality Assurance
 
 El correcte funcionament de la infraestructura cloud es ratifica mitjançant proves funcionals detallades en la documentació específica de cada bloc:
 
 ### Validació de Serveis Multimèdia (Bloc 2)
-* Flux d'Àudio Estable: Verificació del socket TCP 8000 operant en segon pla i modulació correcta en el vúmetre de BUTT en connectar el stream.
-* Transmissió de Vídeo sense Bloquejos: Resolució d'incidències de temps d'espera excessiu (timeout) obrint el port TCP 8096, aconseguint la reproducció directa HLS de l'arxiu MP4 pujat a `/var/www/videos`.
-* Connectivitat WebRTC Multiplataforma: Mitigació de l'absència de càmeres en monitors locals mitjançant la connexió creuada d'un smartphone a través de xarxes mòbils independents, evitant col·lisions de bucle de xarxa (NAT Loopback) i mantenint la trucada fluida a través del port UDP 10000.
-* Rendiment del Servidor: Proves de càrrega utilitzant htop concurrentment amb tots els serveis multimèdia en execució per certificar l'estabilitat de la CPU i memòria RAM.
+* **Flux d'Àudio Estable:** Verificació del socket TCP 8000 operant en segon pla i modulació correcta en el vúmetre de BUTT en connectar el stream.
+* **Transmissió de Vídeo sense Bloquejos:** Resolució d'incidències de temps d'espera excessiu (timeout) obrint el port TCP 8096, aconseguint la reproducció directa HLS de l'arxiu MP4 pujat a `/var/www/videos`.
+* **Connectivitat WebRTC Multiplataforma:** Mitigació de l'absència de càmeres en monitors locals mitjançant la connexió creuada d'un smartphone a través de xarxes mòbils independents, evitant col·lisions de bucle de xarxa (NAT Loopback) i mantenint la trucada fluida a través del port UDP 10000.
+* **Rendiment del Servidor:** Proves de càrrega utilitzant htop concurrentment amb tots els serveis multimèdia en execució per certificar l'estabilitat de la CPU i memòria RAM.
 
 ### Validació d'Estructures de Dades (Bloc 3)
-* Integritat d'Esquemes: Execució de SHOW TABLES constatant l'existència i vinculació de les entitats dissenyades en el diagrama E-R.
-* Control de Privilegis: Auditoria via SHOW GRANTS comprovant l'aïllament d'usuaris i denegació automàtica davant d'accessos no autoritzats.
-* Automatització: Verificació del correcte dispar d'actuadors (triggers) emmagatzemant esdeveniments a log_events i validació de tasques Cron generant vòlculs .sql estables.
+* **Integritat d'Esquemes:** Execució de `SHOW TABLES` constatant l'existència i vinculació de les entitats dissenyades en el diagrama E-R.
+* **Control de Privilegis:** Auditoria via `SHOW GRANTS` comprovant l'aïllament d'usuaris i denegació automàtica davant d'accessos no autoritzats.
+* **Automatització:** Verificació del correcte dispar d'actuadors (triggers) emmagatzemant esdeveniments a `log_events` i validació de tasques Cron generant vòlculs `.sql` estables.
 
-## Repository Structure
+## Estructura del Repositori
 
+```text
 innovate-tech-projecte/
 ├── README.md                        # Índex general, IP pública i matriu de ports corporatius
 ├── bloque1-infraestructura/         # Mòdul tècnic liderat per LIAM
@@ -110,29 +111,3 @@ innovate-tech-projecte/
     ├── README.md                    # Documentació del model relacional, rols, triggers i backups
     ├── captures/                    # Evidències (Diagrames E-R, consultes SHOW, outputs de scripts)
     └── scripts/                     # Fitxers fonts .sql (Creació de taules, triggers, crontab setup)
-
-## Methodology
-
-El desenvolupament tecnològic s'ha estructurat sota el marc de treball àgil SCRUM, dividint les fites d'implementació en sprints seqüencials indexats en la documentació:
-
-| Sprint | Període | Enfocament Tècnic Principal |
-| :--- | :--- | :--- |
-| Sprint 1 | 13/04/2026 → 24/04/2026 | Disseny de plànols CPD, topologia de xarxa AWS VPC i anàlisi inicial de mercat. |
-| Sprint 2 | 27/04/2026 → 12/05/2026 | Desplegament manual de serveis multimèdia, securització de ports, model E-R i integració BD. |
-
-## Key Verification Documents
-
-| Document Intern | Descripció |
-| :--- | :--- |
-| bloque1-infraestructura/README.md | Especificacions de la arquitectura de xarxa cloud i parametrització del servidor perimetral. |
-| bloque2-audio-video/README.md | Procediment pas a pas pel desplegament multimèdia, comandes de recuperació i anàlisi d'amplada de banda. |
-| bloque3-base-dades/README.md | Definició de polítiques de triggers, automatització de còpies de seguretat i integració orientada al servei. |
-
-## Deployment Prerequisites
-
-Per aixecar els serveis de la plataforma des d'un estat de parada total:
-1. Accedir a la consola d'AWS i iniciar la instància EC2 Ubuntu Server corporativa.
-2. Comprovar l'assignació de l'adreça IP pública fixa: `98.83.198.167`.
-3. Connectar per SSH i verificar l'estat general dels dimonis bàsics: `sudo systemctl start icecast2 jellyfin prosody`.
-4. Auditar l'escolta de sockets de xarxa mitjançant la comanda: `sudo netstat -tuln | grep -E "8000|8096|443|10000|3306"`.
-5. Iniciar la ingesta remota d'assets i transmissions segons els manuals específics indexats.
