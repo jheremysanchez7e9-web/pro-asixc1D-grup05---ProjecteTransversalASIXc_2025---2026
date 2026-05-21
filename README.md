@@ -19,6 +19,7 @@ Una infraestructura cloud completament integrada i allotjada en una instància A
 
 ## Arquitectura de Tres Capes
 
+```text
 ┌─────────────────────────────────────────────────────────┐
 │  CAPA 3 — INFRAESTRUCTURA I PERÍMETRE (AWS VPC)         │
 │  EC2 Ubuntu Server · Security Groups · Regles d'Entrada │
@@ -36,6 +37,7 @@ Una infraestructura cloud completament integrada i allotjada en una instància A
 │  MySQL / MariaDB · Triggers · Backups Automatitzats     │
 │  Registre de sessions AV · Estructures de privilegis    │
 └─────────────────────────────────────────────────────────┘
+```
 
 Capa 1 — Persistència i Control de Dades (Base de Dades): El motor relacional centralitza l'emmagatzematge de configuracions, control d'accessos i l'auditoria automatitzada. Els triggers registren esdeveniments de streaming a la taula log_events de manera automàtica, mentre que tasques programades en crontab asseguren còpies de seguretat periòdiques de l'esquema.
 
@@ -100,14 +102,23 @@ El correcte funcionament de la infraestructura cloud es ratifica mitjançant pro
 
 ```text
 innovate-tech-projecte/
-├── README.md                        # Índex general, IP pública i matriu de ports corporatius
-├── bloque1-infraestructura/         # Mòdul tècnic liderat per LIAM
-│   ├── README.md                    # Documentació de disseny de CPD, VPC, EC2, SFTP i logs
-│   └── captures/                    # Evidències gràfiques (Plànols, AWS Console, FileZilla status)
-├── bloque2-audio-video/             # Mòdul tècnic liderat per JHEREMY
-│   ├── README.md                    # Manual d'instal·lació manual de Jellyfin, Icecast2, Jitsi i telemetria
-│   └── captures/                    # Evidències (Terminal systemctl status, streaming web, htop metrics)
-└── bloque3-base-dades/              # Mòdul tècnic liderat per FELIX
-    ├── README.md                    # Documentació del model relacional, rols, triggers i backups
-    ├── captures/                    # Evidències (Diagrames E-R, consultes SHOW, outputs de scripts)
-    └── scripts/                     # Fitxers fonts .sql (Creació de taules, triggers, crontab setup)
+├── .gitignore
+├── README.md
+├── documentacio/
+│   └── memoria/ arquitectura/ topologia/ captures-generals/
+├── bloc1-infraestructura-cloud/
+│   ├── README.md
+│   ├── aws/ ansible/ apache/ sftp/ ldap/ graylog/ troubleshooting/
+│   ├── captures/
+│   └── scripts/provisionament.sh
+├── bloc2-audio-video/
+│   ├── README.md
+│   ├── icecast2/ jellyfin/ jitsi/ monitoritzacio/ troubleshooting/
+│   ├── captures/
+│   └── scripts/mesura_rendiment.sh
+└── bloc3-base-de-dades/
+    ├── README.md
+    ├── mysql/ model-relacional/ triggers-i-procediments/ troubleshooting/
+    ├── captures/
+    ├── backups/04_backup_cron.sh
+    └── scripts-sql/01_creacio_esquema.sql 02_usuaris_privilegis.sql 03_triggers_auditoria.sql
