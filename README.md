@@ -100,14 +100,49 @@ El correcte funcionament de la infraestructura cloud es ratifica mitjançant pro
 
 ```text
 innovate-tech-projecte/
-├── README.md                        # Índex general, IP pública i matriu de ports corporatius
-├── bloque1-infraestructura/         # Mòdul tècnic liderat per LIAM
-│   ├── README.md                    # Documentació de disseny de CPD, VPC, EC2, SFTP i logs
-│   └── captures/                    # Evidències gràfiques (Plànols, AWS Console, FileZilla status)
-├── bloque2-audio-video/             # Mòdul tècnic liderat per JHEREMY
-│   ├── README.md                    # Manual d'instal·lació manual de Jellyfin, Icecast2, Jitsi i telemetria
-│   └── captures/                    # Evidències (Terminal systemctl status, streaming web, htop metrics)
-└── bloque3-base-dades/              # Mòdul tècnic liderat per FELIX
-    ├── README.md                    # Documentació del model relacional, rols, triggers i backups
-    ├── captures/                    # Evidències (Diagrames E-R, consultes SHOW, outputs de scripts)
-    └── scripts/                     # Fitxers fonts .sql (Creació de taules, triggers, crontab setup)
+├── .gitignore                             # Filtre de fitxers exclosos del sistema (logs locals, .DS_Store, temporals)
+├── README.md                              # Índex global, direccionament IP pública (98.83.198.167) i taula de ports
+│
+├── documentacio/                          # COBERTA DOCUMENTAL I PLANIFICACIÓ GLOBAL DEL GRUP
+│   ├── memoria/                           # Document de text i memòria final del projecte (.pdf / .docx)
+│   ├── arquitectura/                      # Diagrames de blocs logicials i relació de dependències de xarxa
+│   ├── topologia/                         # Plànols estructurals d'infraestructura (Cisco Packet Tracer / Draw.io)
+│   └── captures-generals/                 # Evidències de validació globals o de funcionament d'equip
+│
+├── bloc1-infraestructura-cloud/           # INFRAESTRUCTURA EN NÚVOL I SERVEIS DE GESTIÓ · Liam
+│   ├── README.md                          # Full de ruta regional, configuració de tallafocs i llista de captures QA
+│   ├── captures/                          # Evidències gràfiques d'auditoria (PAS_1.1 a PAS_1.6)
+│   ├── aws/                               # Configuracions declaratives de la VPC, subxarxes i regles de Security Groups
+│   ├── apache/                            # Fitxers de configuració de llocs web i directoris VirtualHosts
+│   ├── sftp/                              # Parametrització del dimoni SSH per a la transferència de fitxers xifrada
+│   ├── ldap/                              # Arxius d'estructura, esquemes de directori actiu i fitxers d'usuaris (.ldif)
+│   ├── graylog/                           # Dashboards, inputs i encaminaments de logs del sistema via rsyslogd
+│   ├── ansible/                           # Playbooks i rols per a l'automatització del desplegament de paquets
+│   ├── scripts/
+│   │   └── provisionament.sh              # Script en Bash d'ajuda per accelerar la instal·lació inicial del node
+│   └── troubleshooting/                   # Diari de resolució de conflictes de xarxa, errors de ports o permisos
+│
+├── bloc2-audio-video/                     # PROCESSAMENT MULTIMÈDIA I TELEMETRIA DE XARXA · Jheremy
+│   ├── README.md                          # Arquitectura de fluxos de streaming, codificació de còdecs i taula de sockets
+│   ├── captures/                          # Evidències gràfiques d'auditoria (PAS_2.1 a PAS_2.5)
+│   ├── jellyfin/                          # Paràmetres d'optimització HLS i llibreries de vídeo sota demanda (VoD)
+│   ├── icecast2/                          # Arquitectura del fitxer de configuració icecast.xml i definició de muntatges
+│   ├── jitsi/                             # Sockets de control HTTPS i assignació de ports UDP del Jitsi Videobridge (JVB)
+│   ├── monitoritzacio/                    # Configuració de mètriques del sistema, alertes de rendiment i llindars de consum
+│   ├── scripts/
+│   │   └── mesura_rendiment.sh            # Script en Bash d'automatització de telemetria (iperf3 i speedtest-cli)
+│   └── troubleshooting/                   # Resolució d'errors de NAT Loopback, desconnexions o talls en el flux de ràdio
+│
+└── bloc3-base-de-dades/                   # ENGINYERIA DE DADES I INTEGRACIÓ DE SISTEMES CREUATS · Felix
+    ├── README.md                          # Disseny relacional, seguretat lògica d'accessos i documentació d'actuadors
+    ├── captures/                          # Evidències gràfiques d'auditoria (PAS_3.1 a PAS_3.8)
+    ├── mysql/                             # Arxius de paràmetres d'optimització i configuració del motor (my.cnf)
+    ├── model-relacional/                  # Imatges del disseny i diagrames Entitat-Relació (E-R) normalitzats
+    ├── triggers-i-procediments/           # Codi neta de funcions procedimentals externes i rutines del gestor
+    ├── backups/
+    │   └── 04_backup_cron.sh              # Script Bash encarregat de l'automatització i exportació de dumps mysqldump
+    ├── scripts-sql/
+    │   ├── 01_creacio_esquema.sql         # DDL: Instanciació de la Base de Dades, definició de taules i claus foranes
+    │   ├── 02_usuaris_privilegis.sql      # DCL: Polítiques de control d'accés, perfils i directives GRANT unificades
+    │   └── 03_triggers_auditoria.sql      # DML: Lògica de triggers per alimentar de forma automatitzada la taula log_events
+    └── troubleshooting/                   # Resolució de fallades amb restriccions referencials o errors Access Denied
