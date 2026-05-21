@@ -5,8 +5,8 @@ Autors: Liam, Jheremy, Felix
 Cicle: CFGS ASIX — Administració de Sistemes Informàtics en Xarxa
 Centre: Institut Tecnològic de Barcelona
 Any acadèmic: 2025–2026
-Període del projecte: 13/04/2026 → 12/05/2026
-Defensa: 20/05/2026
+Període del projecte: 
+Defensa: 
 
 ## El Problema
 
