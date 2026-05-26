@@ -390,3 +390,7 @@ La implementació de:
 - automatització amb Ansible
 
 garanteix una administració eficient i professional de tota la infraestructura.
+
+
+## Esquema del CPD
+<img width="1059" height="704" alt="image" src="https://github.com/user-attachments/assets/51d65f3d-80f1-4a72-a391-0b89f9b96e17" />
