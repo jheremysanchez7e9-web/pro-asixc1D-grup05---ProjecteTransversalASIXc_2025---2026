@@ -105,7 +105,7 @@ innovate-tech-projecte/
 ├── .gitignore
 ├── README.md
 ├── documentacio/
-│   └── memoria/ arquitectura/ topologia/ captures-generals/
+│   └── memoria/ arquitectura/ topologia/ CPD/ captures-generals/
 ├── bloc1-infraestructura-cloud/
 │   ├── README.md
 │   ├── aws/ ansible/ apache/ sftp/ ldap/ graylog/ troubleshooting/
