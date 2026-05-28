@@ -7,7 +7,7 @@ Centre: Institut Tecnològic de Barcelona
 Any acadèmic: 2025–2026
 Defensa: 29/05
 
-[Anar directament a l'estructura del repositori](#-estructura-del-repositori)
+[Anar directament a l'estructura del repositori](#-Estructura-del-Repositori)
 
 ## El Problema
 
