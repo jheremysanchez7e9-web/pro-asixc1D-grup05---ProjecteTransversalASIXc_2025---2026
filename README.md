@@ -7,7 +7,7 @@ Disseny i implementació d'una infraestructura multimèdia centralitzada en el c
 **Any acadèmic:** 2025–2026  
 **Defensa:** 29/05
 
-[Anar directament a l'estructura del repositori](#-Estructura-del-Repositori)
+[Anar directament a l'estructura del repositori](#estructura-del-repositori)
 
 ## El Problema
 
