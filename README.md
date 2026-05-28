@@ -2,9 +2,9 @@
 
 Disseny i implementació d'una infraestructura multimèdia centralitzada en el cloud amb streaming d'àudio/vídeo gestionat, videoconferència WebRTC i una base de dades relacional auditada — desplegat en una instància AWS EC2.
 **Autors:** Liam, Jheremy, Felix (Grup 5)  
-**Cicle:** CFGS ASIX — Administració de Sistemes Informàtics en Xarxa  
+**Cicle:** CFGS ASIX — Administració de Sistemes Informàtics en Xarxa (ciberseguretat)  
 **Centre:** Institut Tecnològic de Barcelona  
-**Any acadèmic:** 2025–2026
+**Any acadèmic:** 2025–2026  
 **Defensa:** 29/05
 
 [Anar directament a l'estructura del repositori](#-Estructura-del-Repositori)
