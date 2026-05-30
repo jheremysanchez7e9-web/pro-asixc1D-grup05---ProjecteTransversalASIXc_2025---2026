@@ -1,26 +1,26 @@
 
-# 🚀 Projecte Transversal — Grup 05 (ASIXc1D)
-### 🏫 Institut Tecnològic de Barcelona (ITB) · Curs 2025-2026
+#  Projecte Transversal — Grup 05 (ASIXc1D)
+###  Institut Tecnològic de Barcelona (ITB) · Curs 2025-2026
 
 ---
 
-## 📢 Presentació i Defensa del Projecte
+##  Presentació i Defensa del Projecte
 
 Podeu accedir a tot el material audiovisual, el vídeo demostratiu de 3 minuts i les diapositives de suport per a l'exposició oral a través del següent enllaç unificat:
 
-👉 **[Enllaç a les Diapositives i Vídeo de la Defensa (Canva)](https://canva.link/hkygq7034cgfa79)**
+ **[Enllaç a les Diapositives i Vídeo de la Defensa (Canva)](https://canva.link/hkygq7034cgfa79)**
 
 ---
 
-## 👥 Membres del Grup i Rols (RAs)
+##  Membres del Grup i Rols (RAs)
 
-* 🧑‍💻 **Jheremy** — *Multimedia Engineer* **Mòdul M0375:** `RA7 (Àudio)` i `RA8 (Vídeo i Jitsi WebRTC)`.  
+*  **Jheremy** — *Multimedia Engineer* **Mòdul M0375:** `RA7 (Àudio)` i `RA8 (Vídeo i Jitsi WebRTC)`.  
   *Responsable del servidor Icecast2, l'automatització amb Liquidsoap, Nginx HLS i el servei de videoconferència.*
 
-* 🧑‍💻 **Liam** — *SecOps & Monitoring Admin* **Mòdul M1665:** `RA4 (Auditoria)` i `RA5 (Seguretat)`.  
+*  **Liam** — *SecOps & Monitoring Admin* **Mòdul M1665:** `RA4 (Auditoria)` i `RA5 (Seguretat)`.  
   *Responsable de la seguretat perimetral, control del soroll de la xarxa i la pila de logs centralitzada amb Kibana.*
 
-* 🧑‍💻 **Félix** — *Database Administrator* **Mòdul M0378:** `RA3 (Estructures)` i `RA4 (Optimització)`.  
+*  **Félix** — *Database Administrator* **Mòdul M0378:** `RA3 (Estructures)` i `RA4 (Optimització)`.  
   *Responsable de l'arquitectura relacional a MariaDB, la consistència de les transaccions distribuïdes i les polítiques de backup.*
 
 ---
