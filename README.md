@@ -129,23 +129,6 @@ Mòduls i Resultats d’Aprenentatge (RA) implicats <br><br>
 | 2,5 | 1, 2,  3, 4  | RA6 | Desenvolupa un projecte de transformació digital d'una empresa d'un sector relacionat amb el títol, tenint en compte els canvis que s'han de produir en funció dels objectius de l'empresa. |
 | 10  |  | Presentació 29 de maig |  |
 
-<div align='justify'>
-
-Com es realitza el projecte: <br><br>
-● Treball en <strong>grups de 4 alumnes </strong><br><br>
-● Cal generar un projecte amb el nom: <br><br>
-`pro-grupDeClasse-grupDeTreball `<br><br>
-Exemple: `pro-asixc1a-g1 `<br><br>
-<strong>Institut Tecnològic de Barcelona </strong><br><br>
-https://www.itb.cat/ <br><br>
-@iTecBcn<br><br>
-<strong>CFGS Administració de sistemes Informàtics en Xarxa </strong><br><br>
-<strong>Mòduls </strong>0371, 0377, 0378 i 1665 <strong>Curs 25/26 Primera convocatòria Grups </strong>A/B/C/D <br><br>
-<strong>Formador/a: </strong><em>Equip docent ASIXc1A ,</em><em> </em><em>ed-asixc1b@itb.cat Equip docent ASIXc1C ,</em><em> </em><em>Equip docent ASIXc1D </em><br><br>
-Com es lliura la tasca: <br><br>
-● Informe detallat amb les respostes i justificacions <br><br>
-● Video-demostració pràctic que mostri el funcionament real. <br><br>
-● Respectar la <strong>data de lliurament del dia 28 de maig a les 23:59 hores </strong><br><br>
 Descripció del projecte: <br><br>
 El projecte neix de la necessitat d'<strong>Innovate Tech</strong>, una empresa dedicada a la provisió de serveis tecnològics, de modernitzar la seva capacitat operativa i comunicativa. El creixement de l'activitat de vendes en línia i la demanda de suport tècnic requereixen una base tecnològica sòlida que integri la gestió del personal amb serveis multimèdia avançats. <br><br>
 L'objectiu central és dissenyar i implementar un <strong>Centre de Processament de Dades (CPD) </strong>eficient, que actuï com el cor de les operacions de l'empresa, garantint la continuïtat del negoci i la qualitat del servei en un entorn empresarial exigent. <br><br>
