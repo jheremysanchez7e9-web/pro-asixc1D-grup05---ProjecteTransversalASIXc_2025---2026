@@ -1957,19 +1957,6 @@ A partir dels requisits especificats a les seccions anteriors, cal realitzar: 1.
   <img src="images/img_74.png" alt="Imagen 74" />
 </p>
 
-<div align="justify">
-3. Implementació en el SGBD: creació de totes les taules amb les restriccions adequades (PRIMARY KEY, FOREIGN KEY, NOT NULL, UNIQUE, CHECK), amb un nombre significatiu de dades de prova inserides. <br><br>
-Cal incloure en la documentació captures de pantalla que demostrin que les taules s'han creat correctament i que les dades s'han inserit. <br><br>
-4 Lliurament i presentació <br><br>
-<strong>1. És obligatòria la presentació per poder avaluar les RAs. </strong><br><br>
-2. Vídeo de 3 minuts el qual ha de tenir: <br><br>
-a. Una Introducció on es plantegi un problema, una necessitat … i la solució proposada (Poc temps de duració) <br><br>
-b. Una part amb la demo on es vegin el servidor i els clients en funcionament, i el manegament de les dades. <br><br>
-c. Una conclusió, finalització del vídeo / presentació on justifiqueu perquè el vostre desplegament funciona i serveix per … <br><br>
-3. Exposició de duració de 10-15 minuts explicant els punts i aspectes més importants del projecte transversal. Es valorarà: <br><br>
-a. La qualitat del material de la presentació: claredat, estructura, faltes ortografia. <br><br>
-b. Exposició realitzada del projecte i cenyida al temps disponible. c. Participació de tots els membres del grup de forma equitativa. d. Interacció i resposta a les preguntes al respecte. <br><br>
-4. Enllaç publicat al GitHub del document en Markdown amb el recull d’evidències de tots els apartats i les respostes teòriques justificades <br><br>
 <strong>Institut Tecnològic de Barcelona </strong><br><br>
 https://www.itb.cat/ <br><br>
 @iTecBcn<br><br>
