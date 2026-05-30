@@ -1,3 +1,32 @@
+
+# 🚀 Projecte Transversal — Grup 05 (ASIXc1D)
+### 🏫 Institut Tecnològic de Barcelona (ITB) · Curs 2025-2026
+
+---
+
+## 📢 Presentació i Defensa del Projecte
+
+En el següent enllaç podeu accedir a tot el material audiovisual i de suport requerit per a la defensa de l'exposició oral (10-15 minuts):
+
+👉 **[Enllaç a les Diapositives i Vídeo Demostratiu (3 min)]([AQUÍ_EL_TEU_LINK_UNIFICAT](https://www.canva.com/design/DAHK8VLYMFI/otj41vSUXHkqruqzW-J_8Q/edit))** *(Inclou la justificació del problema de negoci, el desplegament complet de la infraestructura distribuïda i la demo en viu dels serveis).*
+
+---
+
+## 👥 Membres del Grup i Rols (RAs)
+
+* 🧑‍💻 **Jheremy** — *Multimedia Engineer* **Mòdul M0375:** `RA7 (Àudio)` i `RA8 (Vídeo i Jitsi WebRTC)`.  
+  *Responsable d'Icecast2, Liquidsoap, Nginx HLS i videotrucades.*
+
+* 🧑‍💻 **Liam** — *SecOps & Monitoring Admin* **Mòdul M1665:** `RA4 (Auditoria)` i `RA5 (Seguretat)`.  
+  *Responsable de la seguretat de la xarxa i la gestió de logs amb Kibana.*
+
+* 🧑‍💻 **Félix** — *Database Administrator* **Mòdul M0378:** `RA3 (Estructures)` i `RA4 (Optimització)`.  
+  *Responsable del disseny relacional a MariaDB, transaccions i backups.*
+
+---
+
+
+
 # pro-asixc1D-grup05 - Projecte Transversal ASIXc 2025_2026
 
 <a name="indice"></a>
@@ -917,7 +946,8 @@ https://www.itb.cat/ <br><br>
 </p>
 
 <div align="justify">
-<strong>`Justificació:`</strong>`Verificació visual de la infraestructura desplegada sobre AWS amb separació de serveis.`<br><br>
+<strong>`Justificació:
+`</strong>`Verificació visual de la infraestructura desplegada sobre AWS amb separació de serveis.`<br><br>
 </div>
 
 <a name="22-replicacio-de-la-infraestructura"></a>
@@ -952,7 +982,8 @@ https://www.itb.cat/ <br><br>
 </p>
 
 <div align="justify">
-<strong>`Justificació:`</strong>`Comprovació visual de la implementació de múltiples servidors independents dins la infraestructura AWS.`<br><br>
+<strong>`Justificació:
+`</strong>`Comprovació visual de la implementació de múltiples servidors independents dins la infraestructura AWS.`<br><br>
 </div>
 
 <a name="31-instal-lacio-del-servidor-web-apache"></a>
@@ -968,7 +999,8 @@ https://www.itb.cat/ <br><br>
 `sudo systemctl enable apache2`<br><br>
 `sudo systemctl start apache2`<br><br>
 `Posteriorment es comprova el correcte funcionament del servei.`<br><br>
-<strong></strong><br><br>
+<strong>
+</strong><br><br>
 </div>
 
 <p align="center">
@@ -976,7 +1008,8 @@ https://www.itb.cat/ <br><br>
 </p>
 
 <div align="justify">
-<strong>`Justificació:`</strong>`Verificació visual del correcte funcionament del servidor web Apache.`<br><br>
+<strong>`Justificació:
+`</strong>`Verificació visual del correcte funcionament del servidor web Apache.`<br><br>
 </div>
 
 <a name="32-verificacio-del-servei-web"></a>
@@ -1001,7 +1034,8 @@ https://www.itb.cat/ <br><br>
 </p>
 
 <div align="justify">
-<strong>`Justificació:`</strong>`Comprovació visual del correcte desplegament del servei web sobre AWS.`<br><br>
+<strong>`Justificació:
+`</strong>`Comprovació visual del correcte desplegament del servei web sobre AWS.`<br><br>
 </div>
 
 <a name="33-configuracio-del-dashboard"></a>
@@ -1032,7 +1066,8 @@ https://www.itb.cat/ <br><br>
 </p>
 
 <div align="justify">
-<strong>`Justificació:`</strong>`Verificació visual de la configuració i personalització del dashboard principal.`<br><br>
+<strong>`Justificació:
+`</strong>`Verificació visual de la configuració i personalització del dashboard principal.`<br><br>
 </div>
 
 <a name="41-instal-lacio-del-servei-sftp"></a>
@@ -1055,7 +1090,8 @@ https://www.itb.cat/ <br><br>
 </p>
 
 <div align="justify">
-<strong>`Justificació:`</strong>`Verificació visual del correcte funcionament del servei SSH/SFTP.`<br><br>
+<strong>`Justificació:
+`</strong>`Verificació visual del correcte funcionament del servei SSH/SFTP.`<br><br>
 </div>
 
 <a name="42-configuracio-del-servei-sftp"></a>
@@ -1081,7 +1117,8 @@ https://www.itb.cat/ <br><br>
 </p>
 
 <div align="justify">
-<strong>`Justificació:`</strong>`Comprovació visual de la configuració segura del servei SFTP.`<br><br>
+<strong>`Justificació:
+`</strong>`Comprovació visual de la configuració segura del servei SFTP.`<br><br>
 </div>
 
 <a name="43-verificacio-de-connexio-sftp"></a>
@@ -1105,7 +1142,8 @@ https://www.itb.cat/ <br><br>
 </p>
 
 <div align="justify">
-<strong>`Justificació:`</strong>`Verificació visual del correcte funcionament del servei SFTP remot.`<br><br>
+<strong>`Justificació:
+`</strong>`Verificació visual del correcte funcionament del servei SFTP remot.`<br><br>
 </div>
 
 <a name="51-instal-lacio-del-servidor-ldap"></a>
@@ -1343,7 +1381,8 @@ Aquesta infraestructura haurà de permetre: <br><br>
 Els serveis s’hauran d’implantar utilitzant tecnologies estàndard i configuracions realistes d’entorn empresarial. <br><br>
 `2.2 Implantació del servei d’àudio `<br><br>
 `2.2.1 Objectius `<br><br>
-Implementar un sistema de distribució d’àudio que permeti streaming en directe i sota demanda. <br><br>
+Implementar un sistema de distribució d’àudio que permeti streaming en directe i sota demanda. 
+<br><br>
 `2.2.2 Requeriments `<br><br>
 L’alumne haurà de: <br><br>
 <strong>● </strong>Descriure la funcionalitat del servei d’àudio. <br><br>
@@ -1351,10 +1390,13 @@ L’alumne haurà de: <br><br>
 <strong>● </strong>Utilitzar formats d’àudio digital com MP3, AAC o OGG. <br><br>
 <strong>● </strong>Configurar clients d’accés. <br><br>
 <strong>● </strong>Permetre l’accés via navegador web. <br><br>
-<strong>● </strong>Documentar la instal·lació, configuració i proves del servei. <br><br>
+<strong>● </strong>Documentar la instal·lació, configuració i proves del servei. 
+<br><br>
 `2.2.3 Requisits mínims obligatoris `<br><br>
 Per poder ser avaluat, el servei haurà de complir com a mínim: <br><br>
-● Servidor d’àudio instal·lat i operatiu. <br><br>
+● Servidor d’àudio instal·lat i operatiu. 
+
+<br><br>
 ● Almenys <strong>1 canal d’àudio funciona</strong>l. <br><br>
 <strong>Institut Tecnològic de Barcelona </strong><br><br>
 https://www.itb.cat/ <br><br>
@@ -1526,7 +1568,9 @@ Es valorarà: <br><br>
 <em>`2.3.2 Evidències i Justificació de Captures`</em><br><br>
 <strong>`CAPTURA 6: Socket del servidor de vídeo`</strong><br><br>
 `«Verifica que el daemon natiu de Jellyfin està operatiu i escoltant correctament peticions al port TCP 8096.»`<br><br>
-`Terminal amb sudo ss -tlnp | grep 8096.`<br><br>
+`Terminal amb sudo ss -tlnp | grep 8096.
+
+`<br><br>
 </div>
 
 <p align="center">
