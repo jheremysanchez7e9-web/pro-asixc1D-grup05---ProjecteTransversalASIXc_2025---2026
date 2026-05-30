@@ -6,25 +6,24 @@
 
 ## 📢 Presentació i Defensa del Projecte
 
-En el següent enllaç podeu accedir a tot el material audiovisual i de suport requerit per a la defensa de l'exposició oral (10-15 minuts):
+Podeu accedir a tot el material audiovisual, el vídeo demostratiu de 3 minuts i les diapositives de suport per a l'exposició oral a través del següent enllaç unificat:
 
-👉 **[Enllaç a les Diapositives i Vídeo Demostratiu (3 min)]([AQUÍ_EL_TEU_LINK_UNIFICAT](https://www.canva.com/design/DAHK8VLYMFI/otj41vSUXHkqruqzW-J_8Q/edit))** *(Inclou la justificació del problema de negoci, el desplegament complet de la infraestructura distribuïda i la demo en viu dels serveis).*
+👉 **[Enllaç a les Diapositives i Vídeo de la Defensa (Canva)](https://canva.link/hkygq7034cgfa79)**
 
 ---
 
 ## 👥 Membres del Grup i Rols (RAs)
 
 * 🧑‍💻 **Jheremy** — *Multimedia Engineer* **Mòdul M0375:** `RA7 (Àudio)` i `RA8 (Vídeo i Jitsi WebRTC)`.  
-  *Responsable d'Icecast2, Liquidsoap, Nginx HLS i videotrucades.*
+  *Responsable del servidor Icecast2, l'automatització amb Liquidsoap, Nginx HLS i el servei de videoconferència.*
 
 * 🧑‍💻 **Liam** — *SecOps & Monitoring Admin* **Mòdul M1665:** `RA4 (Auditoria)` i `RA5 (Seguretat)`.  
-  *Responsable de la seguretat de la xarxa i la gestió de logs amb Kibana.*
+  *Responsable de la seguretat perimetral, control del soroll de la xarxa i la pila de logs centralitzada amb Kibana.*
 
 * 🧑‍💻 **Félix** — *Database Administrator* **Mòdul M0378:** `RA3 (Estructures)` i `RA4 (Optimització)`.  
-  *Responsable del disseny relacional a MariaDB, transaccions i backups.*
+  *Responsable de l'arquitectura relacional a MariaDB, la consistència de les transaccions distribuïdes i les polítiques de backup.*
 
 ---
-
 
 
 # pro-asixc1D-grup05 - Projecte Transversal ASIXc 2025_2026
