@@ -25,10 +25,7 @@ Podeu accedir a tot el material audiovisual, el vídeo demostratiu de 3 minuts i
 
 ---
 
-
-# pro-asixc1D-grup05 - Projecte Transversal ASIXc 2025_2026
-
-<a name="indice"></a>
+<a name="índex"></a>
 # Índice
 
 * [1. Proposta de CPD Sostenible – InnovateTech](#1-proposta-de-cpd-sostenible--innovatetech)
